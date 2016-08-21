@@ -1,11 +1,6 @@
 export function changeAmount(state = {}, action) {
     switch (action.type) {
-        case 'CREATE_ACCOUNT':
-            return Object.assign({}, {
-                state: true,
-                msg: "SUCCESS",
-                balance: action.payload.amount,
-            });
+
         case 'DEPOSIT_INTO_ACCOUNT':
             if (false === Number.isFinite(action.payload.amount)) {
                 return Object.assign({}, {
@@ -54,6 +49,10 @@ export function changeAmount(state = {}, action) {
                 });
             }
         default:
-            return state;
+            return Object.assign({}, {
+                state: true,
+                msg: "CREATE_ACCOUNT",
+                balance: state.balance
+            });
     }
 }

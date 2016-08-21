@@ -30,7 +30,11 @@ import {createStore} from 'redux';
 import {changeAmount} from './redux/reducer';
 import AppContainer from './redux/AppContainer.jsx';
 
-let store = createStore(changeAmount, 1000);
+let store = createStore(changeAmount, {
+    balance: 1000,
+    isError: false,
+    errMsg: ""
+});
 
 ReactDOM.render(
     <Provider store = {store}>

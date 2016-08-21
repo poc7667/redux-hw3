@@ -3,7 +3,8 @@ import {deposit, withdraw} from './actions';
 import App from './App.jsx';
 
 const mapStateToProps = (state) => {
-	return { balance: state };
+	return state;
+	// return { balance: state };
 };
 
 const mapDispatchToProps = (dispatch) => {
